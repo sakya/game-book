@@ -1,11 +1,13 @@
 import { Item } from "./item";
+import { PropertyObject } from "./propertyObject";
 
-export class Player {
+export class Player extends PropertyObject {
     public name: string = '';
     public inventory: Item[] = [];
     public healthPoint: number = 0;
-
+    
     constructor() {
+        super();
     }
 
     public isDead(): boolean {
