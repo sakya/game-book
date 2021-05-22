@@ -1,6 +1,7 @@
 import { Page } from "./page";
+import { PropertyObject } from "./propertyObject";
 
-export class Book {
+export class Book extends PropertyObject {
     public serie: string = '';
     public index: number = 0;
     public title: string = '';
@@ -12,6 +13,7 @@ export class Book {
     public pages: Page[] = [];
 
     constructor() {
+        super();
         
     }
 }

@@ -1,3 +1,5 @@
+import { PropertyObject } from "./propertyObject";
+
 export abstract class Action {
     public text: String;
 
@@ -16,12 +18,12 @@ export class LinkAction extends Action {
     }
 } // LinkAction
 
-export class Page {
+export class Page extends PropertyObject {
     public id: string = '';
     public text: string = '';
     public actions: Action[] = [];
 
     constructor() {
-
+        super();
     }
 } // Page
