@@ -11,4 +11,5 @@ export declare class Book extends PropertyObject {
     version: string;
     pages: Page[];
     constructor();
+    getPage(id: string): Page | null;
 }

@@ -1,9 +1,11 @@
 import { PropertyObject } from "./propertyObject";
 
 export abstract class Action {
+    public type: String;
     public text: String;
 
-    constructor(text: string) {
+    constructor(type: string, text: string) {
+        this.type = type;
         this.text = text;
     }
 } // Action
@@ -12,7 +14,7 @@ export class LinkAction extends Action {
     public pageId: string = '';
 
     constructor(text: string, pageId: string) {
-        super(text);
+        super("LinkAction", text);
 
         this.pageId = pageId;
     }
