@@ -12,4 +12,5 @@ export declare class Book extends PropertyObject {
     pages: Page[];
     constructor();
     getPage(id: string): Page | null;
+    getRandomNumber(min: number, max: number): number;
 }

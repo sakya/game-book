@@ -1,8 +1,11 @@
+import { Player } from "./player";
 import { PropertyObject } from "./propertyObject";
 export declare abstract class Action {
-    type: String;
-    text: String;
+    type: string;
+    text: string;
+    enableCondition: string;
     constructor(type: string, text: string);
+    isEnabled(player: Player): boolean;
 }
 export declare class LinkAction extends Action {
     pageId: string;

@@ -24,4 +24,8 @@ export class Book extends PropertyObject {
             return p[0];
         return null;
     } // getPage
+
+    public getRandomNumber(min: number, max: number) : number {
+        return Math.floor(Math.random() * max) + min;
+    } // getRandomNumber
 }

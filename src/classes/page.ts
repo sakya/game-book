@@ -1,12 +1,22 @@
+import { Player } from "./player";
 import { PropertyObject } from "./propertyObject";
 
 export abstract class Action {
-    public type: String;
-    public text: String;
+    public type: string;
+    public text: string;
+    public enableCondition: string = '';
 
     constructor(type: string, text: string) {
         this.type = type;
         this.text = text;
+    }
+
+    public isEnabled(player: Player) : boolean {
+        if (this.enableCondition && this.enableCondition.length > 0) {
+            var func = new Function(this.enableCondition);
+            return func.call(player);
+        }
+        return true;
     }
 } // Action
 
