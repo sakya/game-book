@@ -1,3 +1,4 @@
+import { plainToClass, Type } from "class-transformer";
 import { Page } from "./page";
 import { PropertyObject } from "./propertyObject";
 
@@ -11,6 +12,7 @@ export class Book extends PropertyObject {
     public publisher: string = '';
     public version: string = '';
 
+    @Type(() => Page)
     public pages: Page[] = [];
 
     constructor() {
@@ -28,4 +30,8 @@ export class Book extends PropertyObject {
     public getRandomNumber(min: number, max: number) : number {
         return Math.floor(Math.random() * max) + min;
     } // getRandomNumber
+
+    public static load(data: object) {
+        return plainToClass(Book, data);
+    } // load
 }
