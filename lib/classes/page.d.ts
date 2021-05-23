@@ -1,3 +1,4 @@
+import "reflect-metadata";
 import { Player } from "./player";
 import { PropertyObject } from "./propertyObject";
 export declare abstract class Action {

@@ -1,3 +1,5 @@
+import { Type } from "class-transformer";
+import "reflect-metadata";
 import { Player } from "./player";
 import { PropertyObject } from "./propertyObject";
 
@@ -33,6 +35,7 @@ export class LinkAction extends Action {
 export class Page extends PropertyObject {
     public id: string = '';
     public text: string = '';
+    @Type(() => Action)
     public actions: Action[] = [];
 
     constructor() {
