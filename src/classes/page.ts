@@ -9,12 +9,12 @@ export abstract class Action {
 } // Action
 
 export class LinkAction extends Action {
-    public PageId: string = '';
+    public pageId: string = '';
 
     constructor(text: string, pageId: string) {
         super(text);
 
-        this.PageId = pageId;
+        this.pageId = pageId;
     }
 } // LinkAction
 

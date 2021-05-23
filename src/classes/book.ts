@@ -17,4 +17,11 @@ export class Book extends PropertyObject {
         super();
         
     }
+
+    public getPage(id: string) : Page | null {
+        const p = this.pages.filter(p => p.id == id);
+        if (p.length > 0)
+            return p[0];
+        return null;
+    } // getPage
 }

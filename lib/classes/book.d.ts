@@ -1,9 +1,14 @@
 import { Page } from "./page";
-export declare class Book {
+import { PropertyObject } from "./propertyObject";
+export declare class Book extends PropertyObject {
+    id: string;
     serie: string;
     index: number;
     title: string;
-    author: string;
+    authors: string[];
+    illustrators: string[];
+    publisher: string;
+    version: string;
     pages: Page[];
     constructor();
 }
