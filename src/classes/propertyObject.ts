@@ -1,6 +1,9 @@
+import { Type } from "class-transformer";
+import "reflect-metadata";
 import { Property } from "./property";
 
 export abstract class PropertyObject {
+    @Type(() => Property)
     public properties: Property[] = [];
 
     public getProperty(name: string): Property | null {

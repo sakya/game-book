@@ -1,8 +1,11 @@
+import { Type } from "class-transformer";
+import "reflect-metadata";
 import { Item } from "./item";
 import { PropertyObject } from "./propertyObject";
 
 export class Player extends PropertyObject {
     public name: string = '';
+    @Type(() => Item)
     public inventory: Item[] = [];
     public healthPoint: number = 0;
     
