@@ -1,3 +1,4 @@
+import "reflect-metadata";
 import { Item } from "./item";
 import { PropertyObject } from "./propertyObject";
 export declare class Player extends PropertyObject {

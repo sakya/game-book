@@ -1,3 +1,4 @@
+import "reflect-metadata";
 import { Property } from "./property";
 export declare abstract class PropertyObject {
     properties: Property[];
