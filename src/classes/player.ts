@@ -48,12 +48,15 @@ export class Player extends PropertyObject {
       if (i != null && i.canBeEquipped && !i.isEquipped) {
         const slots  = [...this.equipmentSlots];
         for (let ei of this.equipment) {
-          const idx = slots.indexOf(ei.equipLocation);
-          if (idx != -1)
-            slots.splice(idx, 1);
+          for (let el of ei.equipLocations) {
+            const idx = slots.indexOf(el);
+            if (idx != -1)
+              slots.splice(idx, 1);
+          }
         }
 
-        if (slots.indexOf(i.equipLocation) != -1) {
+        const fa = slots.filter(value => i?.equipLocations.indexOf(value) != -1);
+        if (fa.length == i.equipLocations.length) {
           i.isEquipped = true;
           return true;
         }

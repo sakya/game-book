@@ -6,7 +6,7 @@ export class Item extends PropertyObject {
     public name: string = '';
     public description: string = '';
     public isEquipped: boolean = false;
-    public equipLocation: string = '';
+    public equipLocations: string[] = [];
 
     constructor(id: string) {
         super();
@@ -14,6 +14,6 @@ export class Item extends PropertyObject {
     }
 
     public get canBeEquipped(): boolean {
-      return this.equipLocation?.length > 0;
+      return this.equipLocations?.length > 0;
     } // canBeEquipped
 } // Item
