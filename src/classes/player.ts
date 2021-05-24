@@ -1,9 +1,12 @@
 import { plainToClass, Type } from "class-transformer";
 import { Item } from "./item";
 import { PropertyObject } from "./propertyObject";
+import { Stat } from "./stat";
 
 export class Player extends PropertyObject {
     public name: string = '';
+    @Type(() => Stat)
+    public stats: Stat[] = [];
     @Type(() => Item)
     public inventory: Item[] = [];
     public equipmentSlots: string[] = [];
@@ -17,6 +20,22 @@ export class Player extends PropertyObject {
         return this.healthPoint <= 0;
     } // isDead
 
+    //#region Stats
+    public getStat(name: string): Stat | null {
+      var i = this.stats.filter(i => i.name == name);
+      if (i.length > 0)
+        return i[0];
+      return null;
+    } // getStat
+
+    public setStatValue(name: string, value: number) {
+      var s = this.getStat(name);
+      if (s != null)
+        s.value = value;
+    } // setStatValue
+    //#endregion
+
+    //#region Items
     public getItem(itemId: string) : Item | null {
       var i = this.inventory.filter(i => i.id == itemId);
       if (i.length > 0)
@@ -76,7 +95,8 @@ export class Player extends PropertyObject {
     public get equipment(): Item[] {
         return this.inventory.filter(i => i.isEquipped);
     } // equipment
-
+    //#endregion
+    
     public static load(data: object) {
       return plainToClass(Player, data);
   } // load    
