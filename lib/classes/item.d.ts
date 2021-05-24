@@ -5,5 +5,7 @@ export declare class Item extends PropertyObject {
     name: string;
     description: string;
     isEquipped: boolean;
+    equipLocation: string;
     constructor(id: string);
+    get canBeEquipped(): boolean;
 }
