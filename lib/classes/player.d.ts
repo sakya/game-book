@@ -1,4 +1,3 @@
-import "reflect-metadata";
 import { Item } from "./item";
 import { PropertyObject } from "./propertyObject";
 export declare class Player extends PropertyObject {
@@ -8,4 +7,5 @@ export declare class Player extends PropertyObject {
     constructor();
     isDead(): boolean;
     get equipment(): Item[];
+    static load(data: object): Player;
 }

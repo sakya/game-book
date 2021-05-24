@@ -1,3 +1,4 @@
+import "reflect-metadata";
 import { Book } from './classes/book';
 import { Item } from './classes/item';
 import { Page } from './classes/page';

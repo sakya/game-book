@@ -1,5 +1,4 @@
 import { Type } from "class-transformer";
-import "reflect-metadata";
 import { Property } from "./property";
 
 export abstract class PropertyObject {
