@@ -21,6 +21,10 @@ export class Player extends PropertyObject {
     } // isDead
 
     //#region Stats
+    public get hasStats(): boolean {
+      return this.stats && this.stats.length > 0;
+    } // hasStats
+
     public getStat(name: string): Stat | null {
       var i = this.stats.filter(i => i.name == name);
       if (i.length > 0)
