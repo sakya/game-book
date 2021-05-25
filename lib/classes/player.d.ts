@@ -9,6 +9,7 @@ export declare class Player extends PropertyObject {
     healthPoint: number;
     constructor();
     isDead(): boolean;
+    get hasStats(): boolean;
     getStat(name: string): Stat | null;
     setStatValue(name: string, value: number): void;
     getItem(itemId: string): Item | null;
