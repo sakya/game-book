@@ -5,6 +5,7 @@ export class Item extends PropertyObject {
     public type: string = '';
     public name: string = '';
     public description: string = '';
+    public image: string = '';
     public isEquipped: boolean = false;
     public equipLocations: string[] = [];
 
