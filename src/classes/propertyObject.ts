@@ -6,8 +6,7 @@ export abstract class PropertyObject {
     public properties: Property[] = [];
 
     public hasProperty(name: string) : boolean {
-        const props = this.properties.filter(p => p.name == name);
-        return props.length > 0;
+        return this.getProperty(name) != null;
     } // hasProperty
 
     public getProperty(name: string): Property | null {
