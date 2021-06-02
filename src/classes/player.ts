@@ -101,7 +101,7 @@ export class Player extends PropertyObject {
     } // equipment
     //#endregion
     
-    public static load(data: object) {
+    public static load(data: object): Player {
       return plainToClass(Player, data);
-  } // load    
+    } // load    
 }

@@ -31,7 +31,7 @@ export class Book extends PropertyObject {
         return Math.floor(Math.random() * max) + min;
     } // getRandomNumber
 
-    public static load(data: object) {
+    public static load(data: object): Book {
         return plainToClass(Book, data);
     } // load
 }
