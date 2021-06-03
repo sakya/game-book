@@ -11,6 +11,7 @@ export class Book extends PropertyObject {
     public illustrators: string[] = [];
     public publisher: string = '';
     public version: string = '';
+    public startPageId: string = '';
 
     @Type(() => Page)
     public pages: Page[] = [];
