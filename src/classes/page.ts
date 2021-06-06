@@ -14,6 +14,11 @@ export abstract class Action {
         this.text = text;
     }
 
+    /**
+     * Run the enableCondition
+     * @param player The player
+     * @returns A boolean value
+     */
     public isEnabled(player: Player) : boolean {
         if (this.enableCondition && this.enableCondition.length > 0) {
             const body = `let player = arguments[0];
@@ -24,6 +29,11 @@ export abstract class Action {
         return true;
     } // isEnabled
 
+    /**
+     * Run the visibleCondition
+     * @param player The player
+     * @returns A boolean value
+     */
     public isVisible(player: Player) : boolean {
       if (this.visibleCondition && this.visibleCondition.length > 0) {
           const body = `let player = arguments[0];
@@ -34,6 +44,11 @@ export abstract class Action {
       return true;
     } // isVisible
 
+    /**
+     * Run the script
+     * @param player The player
+     * @returns 
+     */
     public runScript(player: Player) : void {
       if (this.script && this.script.length > 0) {
           const body = `let player = arguments[0];

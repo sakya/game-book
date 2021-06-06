@@ -7,8 +7,23 @@ export declare abstract class Action {
     visibleCondition: string;
     script: string;
     constructor(type: string, text: string);
+    /**
+     * Run the enableCondition
+     * @param player The player
+     * @returns A boolean value
+     */
     isEnabled(player: Player): boolean;
+    /**
+     * Run the visibleCondition
+     * @param player The player
+     * @returns A boolean value
+     */
     isVisible(player: Player): boolean;
+    /**
+     * Run the script
+     * @param player The player
+     * @returns
+     */
     runScript(player: Player): void;
 }
 export declare class LinkAction extends Action {

@@ -9,6 +9,7 @@ export declare class Book extends PropertyObject {
     illustrators: string[];
     publisher: string;
     version: string;
+    startPageId: string;
     pages: Page[];
     constructor();
     getPage(id: string): Page | null;
